@@ -66,7 +66,7 @@ Joins Silver tables to derive financial metrics and executes inline data quality
 
 ### Power BI Executive Dashboard
 
-![Executive Order Analytics Dashboard](ws-nz-retail-dev/screenshots/power_bi.dashboard.png)
+![Executive Order Analytics Dashboard](ws-nz-retail-dev/screenshots/powerbi_dashboard.png)
 
 ### Step 4: Executive Reporting & Visual Analytics(`Executive_Order_Analytics_Dashboard`)
 
