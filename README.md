@@ -66,6 +66,21 @@ Joins Silver tables to derive financial metrics and executes inline data quality
 
 ---
 
+## Power BI Executive Dashboard
+
+![Executive Order Analytics Dashboard](ws-nz-retail-dev/screenshots/powerbi_dashboard.png)
+
+### Step 4: Executive Reporting & Visual Analytics (`Executive_Order_Analytics_Dashboard`)
+
+- **Semantic Model Integration:** Connects directly to `Order_Analytics_Model` built on top of `gold_order_analytics` in Direct Lake / Import mode for real-time performance tracking.
+- **Key Visual Performance Indicators:**
+  - **Financial Summary Cards:** Displays real-time aggregated metrics for **Gross Net Revenue**, **Gross Total Cost**, **Gross Profit**, and **Profit Margin %**.
+  - **Product Profitability Rankings:** Visualizes top and bottom performing retail products to identify core revenue drivers and margin leaks.
+  - **Sales & Volume Trends:** Breaks down transactional volume (`Qty`) across order statuses (`delivered`, `cancelled`, `processing`).
+  - **Returns Analysis:** Monitors return metrics (`Return_Amount`) against gross sales to highlight product return rates.
+
+---
+
 ## Pipeline Orchestration
 
 ### Master Daily Orchestration (`pl_master_daily_orchestrator`)
