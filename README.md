@@ -10,7 +10,7 @@ The system ingests raw multi-format transaction logs (JSON, CSV, and Pipe-delimi
 
 ## Lakehouse & Storage Architecture
 
-![Lakehouse File & Delta Table Structure](./screenshots/lakehouse_files_structure.png)
+![Lakehouse File & Delta Table Structure](ws-nz-retail-dev/screenshots/lakehouse_files_structure.png)
 
 ### Storage Structure (`retail_lakehouse`)
 
@@ -59,9 +59,9 @@ Standardizes schema types, strips currency symbols (`$`), trims whitespace, norm
 Joins Silver tables to derive financial metrics and executes inline data quality checks prior to writing `gold_order_analytics`:
 
 - **Derived Calculations:**
-  $$\text{Net\_Revenue} = \text{coalesce}(\text{Order\_Amount}, 0.0) - \text{coalesce}(\text{Return\_Amount}, 0.0)$$
-  $$\text{Total\_Cost} = \text{Qty} \times \text{coalesce}(\text{Unit\_Cost\_USD}, 0.0)$$
-  $$\text{Profit} = \text{Net\_Revenue} - \text{Total\_Cost}$$
+  Net_Revenue = coalesce(Order_Amount, 0.0) - coalesce(Return_Amount, 0.0)
+  Total_Cost = Qty \* coalesce(Unit_Cost_USD, 0.0)
+  Profit = Net_Revenue - Total_Cost
 - **Quality Checks:** Runs explicit PySpark `assert` statements validating expected row counts, primary key integrity (`Order_ID IS NOT NULL`), missing financial values, and profit math consistency.
 
 ---
@@ -70,7 +70,7 @@ Joins Silver tables to derive financial metrics and executes inline data quality
 
 ### Master Daily Orchestration (`pl_master_daily_orchestrator`)
 
-![Master Daily Orchestration Pipeline](./screenshots/orchestration_pipeline.png)
+![Master Daily Orchestration Pipeline](ws-nz-retail-dev/screenshots/orchestration_pipeline.png)
 
 1. **Invoke Pipeline (`Ingest_Retail_Data`)**: Triggers `retail_pipeline` to pull fresh raw files from HTTP endpoints into `Files/bronze/`.
 2. **Notebook Activity (`Run_Gold_ETL_and_Assertions`)**: Upon ingestion completion, executes `nb_medallion_processing` to run cleaning, Silver writes, Gold calculations, and quality assertions.
