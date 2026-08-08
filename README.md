@@ -70,7 +70,7 @@ Joins Silver tables to derive financial metrics and executes inline data quality
 
 ![Executive Order Analytics Dashboard](ws-nz-retail-dev/screenshots/powerbi_dashboard.png)
 
-### Step 4: Executive Reporting & Visual Analytics (`Executive_Order_Analytics_Dashboard`)
+### Step 4: Executive Reporting & Visual Analytics(`Executive_Order_Analytics_Dashboard`)
 
 - **Semantic Model Integration:** Connects directly to `Order_Analytics_Model` built on top of `gold_order_analytics` in Direct Lake / Import mode for real-time performance tracking.
 - **Key Visual Performance Indicators:**
