@@ -64,8 +64,6 @@ Joins Silver tables to derive financial metrics and executes inline data quality
   Profit = Net_Revenue - Total_Cost
 - **Quality Checks:** Runs explicit PySpark `assert` statements validating expected row counts, primary key integrity (`Order_ID IS NOT NULL`), missing financial values, and profit math consistency.
 
----
-
 ## Power BI Executive Dashboard
 
 ![Executive Order Analytics Dashboard](ws-nz-retail-dev/screenshots/powerbi_dashboard.png)
